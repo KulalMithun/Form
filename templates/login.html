@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form {
+            background-color: #fff;
+            display: block;
+            padding: 2rem;
+            max-width: 600px;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .form-title {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            font-weight: 600;
+            text-align: center;
+            color: #000;
+            margin-bottom: 1.5rem;
+        }
+        .input-container {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        .input-container input {
+            background-color: #fff;
+            padding: 1rem;
+            font-size: 0.875rem;
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            outline: none;
+        }
+        .submit {
+            display: block;
+            padding: 0.75rem 1.25rem;
+            background-color: #4F46E5;
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 500;
+            width: 100%;
+            border-radius: 0.5rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            margin-top: 1rem;
+        }
+        .error-message {
+            color: #ef4444;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <form class="form" method="post">
+        <p class="form-title">Admin Login</p>
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+        <div class="input-container">
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="input-container">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="submit">Login</button>
+    </form>
+</body>
+</html>
