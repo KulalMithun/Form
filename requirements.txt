@@ -1,0 +1,6 @@
+Flask
+qrcode
+gunicorn
+dotenv
+gspread
+google-auth
